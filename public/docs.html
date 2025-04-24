@@ -3,8 +3,51 @@
 <head>
     <title>Media Server API Documentation</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .endpoint { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .endpoint {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .method {
+            font-weight: bold;
+            color: #2196F3;
+            margin: 15px 0 5px 0;
+            padding: 5px 0;
+        }
+        h1 {
+            color: #1976D2;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        h2 {
+            color: #1976D2;
+        }
+        h3 {
+            color: #424242;
+        }
+        .response {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -12,27 +55,208 @@
     
     <div class="endpoint">
         <h2>Movies API</h2>
-        <p>Endpoint: /movies</p>
-        <p>Methods: GET, POST, PUT, DELETE</p>
-        <p>Data Format:</p>
+        <p>Base Endpoint: /movies</p>
+        
+        <h3>Available Methods:</h3>
+        
+        <div class="method">GET /movies</div>
+        <p>Retrieves all movies</p>
+        <p class="response">Response: Array of movie objects</p>
+        <pre>
+[
+    {
+        "id": 1,
+        "title": "Movie Title",
+        "genre": "Action",
+        "releaseYear": 2023,
+        "director": "Director Name",
+        "duration": "120 minutes",
+        "rating": "PG-13",
+        "mediaFile": "filename.mp4",
+        "thumbnail": "thumbnail.jpg"
+    }
+]
+        </pre>
+        
+        <div class="method">POST /movies</div>
+        <p>Adds a new movie</p>
+        <p>Request Body Format:</p>
         <pre>
 {
     "id": number,
     "title": string,
     "genre": string,
     "releaseYear": number,
-    "mediaFile": string (optional)
+    "director": string,
+    "duration": string,
+    "rating": string,
+    "mediaFile": {
+        "name": string,
+        "data": binary
+    },
+    "thumbnail": {
+        "name": string,
+        "data": binary
+    }
 }
         </pre>
+        
+        <div class="method">PUT /movies?id=:id</div>
+        <p>Updates an existing movie</p>
+        <p>Request Body Format: Same as POST</p>
+        
+        <div class="method">DELETE /movies?id=:id</div>
+        <p>Deletes a movie</p>
+        <p class="response">Response: Updated array of movies</p>
     </div>
 
-    <!-- Add similar sections for series and songs -->
-    
+    <div class="endpoint">
+        <h2>Series API</h2>
+        <p>Base Endpoint: /series</p>
+        
+        <h3>Available Methods:</h3>
+        
+        <div class="method">GET /series</div>
+        <p>Retrieves all series</p>
+        <p class="response">Response: Array of series objects</p>
+        <pre>
+[
+    {
+        "id": 1,
+        "title": "Series Title",
+        "genre": "Drama",
+        "startYear": 2023,
+        "endYear": 2023,
+        "creator": "Creator Name",
+        "totalSeasons": 1,
+        "episodes": [
+            {
+                "seasonNumber": 1,
+                "episodeNumber": 1,
+                "title": "Episode Title",
+                "duration": "45 minutes",
+                "mediaFile": "episode1.mp4"
+            }
+        ],
+        "thumbnail": "series-thumbnail.jpg"
+    }
+]
+        </pre>
+        
+        <div class="method">POST /series</div>
+        <p>Adds a new series</p>
+        <p>Request Body Format:</p>
+        <pre>
+{
+    "id": number,
+    "title": string,
+    "genre": string,
+    "startYear": number,
+    "endYear": number,
+    "creator": string,
+    "totalSeasons": number,
+    "episodes": array,
+    "mediaFile": {
+        "name": string,
+        "data": binary
+    },
+    "thumbnail": {
+        "name": string,
+        "data": binary
+    }
+}
+        </pre>
+        
+        <div class="method">PUT /series?id=:id</div>
+        <p>Updates an existing series</p>
+        <p>Request Body Format: Same as POST</p>
+        
+        <div class="method">DELETE /series?id=:id</div>
+        <p>Deletes a series</p>
+        <p class="response">Response: Updated array of series</p>
+    </div>
+
+    <div class="endpoint">
+        <h2>Songs API</h2>
+        <p>Base Endpoint: /songs</p>
+        
+        <h3>Available Methods:</h3>
+        
+        <div class="method">GET /songs</div>
+        <p>Retrieves all songs</p>
+        <p class="response">Response: Array of song objects</p>
+        <pre>
+[
+    {
+        "id": 1,
+        "title": "Song Title",
+        "artist": "Artist Name",
+        "album": "Album Name",
+        "genre": "Pop",
+        "releaseYear": 2023,
+        "duration": "3:45",
+        "mediaFile": "song.mp3",
+        "thumbnail": "album-cover.jpg"
+    }
+]
+        </pre>
+        
+        <div class="method">POST /songs</div>
+        <p>Adds a new song</p>
+        <p>Request Body Format:</p>
+        <pre>
+{
+    "id": number,
+    "title": string,
+    "artist": string,
+    "album": string,
+    "genre": string,
+    "releaseYear": number,
+    "duration": string,
+    "mediaFile": {
+        "name": string,
+        "data": binary
+    },
+    "thumbnail": {
+        "name": string,
+        "data": binary
+    }
+}
+        </pre>
+        
+        <div class="method">PUT /songs?id=:id</div>
+        <p>Updates an existing song</p>
+        <p>Request Body Format: Same as POST</p>
+        
+        <div class="method">DELETE /songs?id=:id</div>
+        <p>Deletes a song</p>
+        <p class="response">Response: Updated array of songs</p>
+    </div>
+
     <div class="endpoint">
         <h2>Media Downloads</h2>
-        <p>Endpoint: /download/:filename</p>
-        <p>Method: GET</p>
+        <div class="method">GET /download/:filename</div>
         <p>Downloads the specified media file</p>
+        <p>Parameters:</p>
+        <pre>filename: string (The name of the file to download)</pre>
+        <p class="response">Response: Binary file data with appropriate content type</p>
+    </div>
+
+    <div class="endpoint">
+        <h2>Error Responses</h2>
+        <pre>
+{
+    "error": "Error message",
+    "status": 404/400/500
+}
+        </pre>
+        <p>Common Status Codes:</p>
+        <ul>
+            <li>200: Success</li>
+            <li>400: Bad Request</li>
+            <li>404: Not Found</li>
+            <li>500: Internal Server Error</li>
+        </ul>
     </div>
 </body>
 </html>
