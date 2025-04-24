@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Server API Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .endpoint { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Media Server API Documentation</h1>
+    
+    <div class="endpoint">
+        <h2>Movies API</h2>
+        <p>Endpoint: /movies</p>
+        <p>Methods: GET, POST, PUT, DELETE</p>
+        <p>Data Format:</p>
+        <pre>
+{
+    "id": number,
+    "title": string,
+    "genre": string,
+    "releaseYear": number,
+    "mediaFile": string (optional)
+}
+        </pre>
+    </div>
+
+    <!-- Add similar sections for series and songs -->
+    
+    <div class="endpoint">
+        <h2>Media Downloads</h2>
+        <p>Endpoint: /download/:filename</p>
+        <p>Method: GET</p>
+        <p>Downloads the specified media file</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "The Shawshank Redemption",
+        "genre": "Drama",
+        "releaseYear": 1994,
+        "director": "Frank Darabont",
+        "duration": "142 minutes",
+        "rating": "R",
+        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "mediaFile": "1698234567-shawshank.mp4",
+        "thumbnail": "1698234567-shawshank-thumb.jpg",
+        "cast": ["Tim Robbins", "Morgan Freeman"],
+        "lastModified": "2023-10-25T14:30:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Inception",
+        "genre": "Sci-Fi",
+        "releaseYear": 2010,
+        "director": "Christopher Nolan",
+        "duration": "148 minutes",
+        "rating": "PG-13",
+        "description": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "mediaFile": "1698234568-inception.mp4",
+        "thumbnail": "1698234568-inception-thumb.jpg",
+        "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt"],
+        "lastModified": "2023-10-25T14:31:00Z"
+      }
+    ],
+    "series": [
+      {
+        "id": 1,
+        "title": "Breaking Bad",
+        "genre": "Crime Drama",
+        "startYear": 2008,
+        "endYear": 2013,
+        "creator": "Vince Gilligan",
+        "totalSeasons": 5,
+        "episodes": [
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Pilot",
+            "duration": "58 minutes",
+            "mediaFile": "1698234569-bb-s01e01.mp4"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 2,
+            "title": "Cat's in the Bag...",
+            "duration": "48 minutes",
+            "mediaFile": "1698234570-bb-s01e02.mp4"
+          }
+        ],
+        "thumbnail": "1698234571-breaking-bad-thumb.jpg",
+        "cast": ["Bryan Cranston", "Aaron Paul"],
+        "lastModified": "2023-10-25T14:32:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Stranger Things",
+        "genre": "Sci-Fi Horror",
+        "startYear": 2016,
+        "creator": "The Duffer Brothers",
+        "totalSeasons": 4,
+        "episodes": [
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "title": "Chapter One: The Vanishing of Will Byers",
+            "duration": "47 minutes",
+            "mediaFile": "1698234572-st-s01e01.mp4"
+          }
+        ],
+        "thumbnail": "1698234573-stranger-things-thumb.jpg",
+        "cast": ["Millie Bobby Brown", "Finn Wolfhard"],
+        "lastModified": "2023-10-25T14:33:00Z"
+      }
+    ],
+    "songs": [
+      {
+        "id": 1,
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "album": "A Night at the Opera",
+        "genre": "Rock",
+        "releaseYear": 1975,
+        "duration": "5:55",
+        "mediaFile": "1698234574-bohemian-rhapsody.mp3",
+        "thumbnail": "1698234574-queen-thumb.jpg",
+        "lyrics": "Is this the real life? Is this just fantasy?...",
+        "composers": ["Freddie Mercury"],
+        "lastModified": "2023-10-25T14:34:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Billie Jean",
+        "artist": "Michael Jackson",
+        "album": "Thriller",
+        "genre": "Pop",
+        "releaseYear": 1982,
+        "duration": "4:54",
+        "mediaFile": "1698234575-billie-jean.mp3",
+        "thumbnail": "1698234575-mj-thumb.jpg",
+        "lyrics": "She was more like a beauty queen from a movie scene...",
+        "composers": ["Michael Jackson"],
+        "lastModified": "2023-10-25T14:35:00Z"
+      }
+    ],
+    "metadata": {
+      "lastUpdated": "2023-10-25T14:35:00Z",
+      "version": "1.0",
+      "totalMovies": 2,
+      "totalSeries": 2,
+      "totalSongs": 2
+    }
+  }
